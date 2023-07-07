@@ -1,7 +1,7 @@
 const form_model = require('./model');
 
 // Create and Save new form data
-exports.addSomeForm = (req, res) => {
+exports.addOneForm = (req, res) => {
     const form_data = new form_model(req.body);
     try {
         form_data.save()
@@ -33,7 +33,7 @@ exports.addSomeForm = (req, res) => {
 // };
 
 // Find particular form data with an stir
-exports.findOneForm = (req, res) => {
+exports.getOneForm = (req, res) => {
     try {
         form_model.findOne({ stir: req.params.stir }).then(result => {
             if (result.length != 0) {
